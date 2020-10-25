@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    width: 500px;
+    height: 375px;
+    background-color: #268F99;
+    margin: 50px 0 0 0;
+    padding:auto;
+
+}
+
+#question-container {
+    padding: 10px;
+    margin: 10px;
+}
+
+#question {
+    flex: 0;
+    color: white;
+    
+}
+
+.answer-button {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.button {
+    padding: 10px;
+    margin: 5px 0 10px 10px;
+    color: black;
+    background-color:white;
+    border-radius: 8px;
+}
+
+
