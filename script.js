@@ -6,7 +6,7 @@ document.getElementById("timer").innerHTML = "Time Remaining: " + secondsLeft;
 
 function timeRemaining() {
     var timerInterval = setInterval (function() {
-        timerCount.textContent = secondsLeft;
+        timerCount.textContent = "Time Remaining: " + secondsLeft;
         secondsLeft--;
 
         if(secondsLeft === 0) {
