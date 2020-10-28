@@ -1,11 +1,8 @@
-// WHEN click start button, get quiz questions
+// WHEN click start button, timer starts and decrements by 1 seconds
 
 var timerCount = document.getElementById("timer");
 var startButton = document.getElementById("startButton");
 var secondsLeft = 75;
-
-// document.getElementById("timer").innerHTML = "Time Remaining: " + secondsLeft;
-
 
 function timeRemaining() {
     var timerInterval = setInterval (function(event) {
@@ -19,3 +16,23 @@ function timeRemaining() {
 }
 
 startButton.addEventListener("click", timeRemaining);
+
+// WHEN click start button
+// welcome page hides
+// question1 appears
+
+function welcomeTextHide() {
+   var welcomeHide = document.getElementById("Welcome-Page");
+    welcomeHide.style.display = "none";
+};
+
+
+// function questionAppear() {
+//     if (welcomeTextHide === true) {
+//         question1.
+//     }
+// }
+
+// startButton.addEventListener("click", questionAppear);
+
+

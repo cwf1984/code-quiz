@@ -1,12 +1,32 @@
+// IF clicks "#button4" is correct 
+// ELSE false
+// next question appears
+
 var question1 = {
     question: "How is JavaScript added to a HTML page?",
     answers: [
             "<style>",
-            "<script>",
             "<div>",
-            "<java>"
+            "<java>",
+            "<script>"
             ]
 }; 
+
+question1.addEventListener("click", function() {
+    if (answer === "#button4") {
+        //increase score;
+        //display correct at bottom;
+    }
+    else {
+        //decrease score;
+        //display wrong bottom of quiz;
+    }
+});
+
+
+// IF clicks "#button3" is correct (true)
+// ELSE false
+// next question appears
 
 var question2 = {
     "question": "How do we turn a string into numbers?",
@@ -16,7 +36,22 @@ var question2 = {
             "parseInt()",
             "valueOf()"
         ]
-},
+};
+
+question2.addEventListener("click", function() {
+    if (answer === "#button3") {
+        //increase score;
+        //display correct at bottom;
+    }
+    else {
+        //decrease score;
+        //display wrong bottom of quiz;
+    }
+});
+
+// IF clicks "#button1" is correct (true)
+// ELSE false
+// next question appears
 
 var question3 = {
     question: "How do we create a p tag in JavaScript?",
@@ -28,6 +63,21 @@ var question3 = {
         ]
 };
 
+question3.addEventListener("click", function() {
+    if (answer === "#button1") {
+        //increase score;
+        //display correct at bottom;
+    }
+    else {
+        //decrease score;
+        //display wrong bottom of quiz;
+    }
+});
+
+// IF clicks "button3" is correct (true)
+// ELSE false
+// next question appears
+
 var question4 = {
     question: "What does event.stopPropogation() do?",
     answers: [
@@ -38,13 +88,39 @@ var question4 = {
         ]
 };
 
+question4.addEventListener("click", function() {
+    if (answer === "#button3") {
+        //increase score;
+        //display correct at bottom;
+    }
+    else {
+        //decrease score;
+        //display wrong bottom of quiz;
+    }
+});
+
+// IF clicks "button2" is correct (true)
+// ELSE false
+// next question appears
+
 var question5 = {
     question: "What is document.querySelector() used for?",
     answers: [
+            "Returns the element with the class name specified",
             "Returns the first element that matches the CSS selector",
             "Returns the element with the tag name specified",
-            "Returns the element with the class name specified",
             "Returns the element with ID name specified"
         ]
 };
+
+question5.addEventListener("click", function() {
+    if (answer === "#button2") {
+        //increase score;
+        //display correct at bottom;
+    }
+    else {
+        //decrease score;
+        //display wrong bottom of quiz;
+    }
+});
 
