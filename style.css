@@ -2,7 +2,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 nav {
@@ -18,7 +17,7 @@ nav {
     display: inline;
 }
 
-#timer {
+ #timer {
     display: inline;
 }
 
@@ -29,7 +28,6 @@ nav {
     margin: 50px 0 0 0;
     padding: auto;
     border-radius: 25px;
-
 }
 
 #question-container {
@@ -52,7 +50,7 @@ nav {
     flex-direction: column;
 }
 
-.button {
+.button, #startButton {
     padding: 10px;
     margin: 5px 0 10px 10px;
     color: black;
@@ -61,5 +59,28 @@ nav {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 12pt;
 }
+
+.button:hover {
+    background-color: rgb(243, 210, 21);
+    color: white;
+    box-shadow: 2px 2px rgb(71, 71, 71);
+}
+
+#Welcome-Page {
+    padding: 10px;
+    margin: 10px;
+    flex: 0;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15pt;
+    text-align: center;
+}
+
+#beginBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
