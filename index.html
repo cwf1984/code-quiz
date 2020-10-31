@@ -11,27 +11,36 @@
     <div class="card">
         <nav >
             <div id="scores">View Highscores</div>
-            <div>Time Remaining: <span id=timer>75</span></div>
+            <div>Time Remaining: <span id="timer">75</span></div>
         </nav>
+
+        <section>
+        <div id="Welcome-Page" class="welcome-hide">
+            <h2>Coding Quiz Challenge</h2>
+            <p>Answer the following questions to test your knowledge. Your score is based on your whether you answer correctly and also how quickly you answer.</p>
+            <p>Good Luck!</p>
+        </div>
+
+        <div id="beginBtn">
+        <button id="startButton">Start</button>
+        </div> 
+        </section> 
         
-        <div id="question-container">
-            <div id="question"><h1>Question</h1></div>
+        <div id="question-container" class="question-hide">
+            <div id="question" class="questionText"><h1>Question</h1></div>
             <div id="answers" class="answer-button">
-                <button id="button1" class="button">Answer 1</button>
-                <button id="button2" class="button">Answer 2</button>
-                <button id="button3" class="button">Answer 3</button>
-                <button id="button4" class="button">Answer 4</button>
+                <button type="button" id="button1" class="answerbtn" onclick=""></button>
+                <button type="button" id="button2" class="answerbtn" onclick=""></button>
+                <button type="button" id="button3" class="answerbtn" onclick=""></button>
+                <button type="button" id="button4" class="answerbtn" onclick=""></button>
             </div>
         </div>
 
-        <!-- <div id="beginBtn">
-        <button id="startButton">Start</button>
-        </div> -->
+        
         
     </div>
 
     <script src="./script.js"></script>
-    <script src="./script/questions.js"></script>
 
 </body>
 </html>

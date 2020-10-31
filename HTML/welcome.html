@@ -14,23 +14,90 @@
             <div>Time Remaining: <span id=timer>75</span></div>
         </nav>
 
-    <div id="Welcome-Page">
-        <h2>Coding Quiz Challenge</h2>
-        <p>Answer the following questions to test your knowledge. Your score is based on your whether you answer correctly and also how quickly you answer.</p>
-        <p>Good Luck!</p>
+        <section>
+        <div id="Welcome-Page">
+            <h2>Coding Quiz Challenge</h2>
+            <p>Answer the following questions to test your knowledge. Your score is based on your whether you answer correctly and also how quickly you answer.</p>
+            <p>Good Luck!</p>
+        </div>
 
-        <!-- on.Click start button goes to new page with questions -->
+        <div id="beginBtn">
+        <button id="startButton">Start</button>
+        </div> 
+        </section> 
+        
+        <div id="question-container">
+            <div id="question" class="questionText"><h1>Question</h1></div>
+            <div id="answers" class="answer-button">
+                <button type="button" id="button1" class="button">Answer 1</button>
+                <button type="button" id="button2" class="button">Answer 2</button>
+                <button type="button" id="button3" class="button">Answer 3</button>
+                <button type="button" id="button4" class="button">Answer 4</button>
+            </div>
+        </div>
+
+    <div id="question-containter">
+        <form id="question-1" class="quesiton">
+        <h3>How is JavaScript added to a HTML page?</h3>
+        <ul>
+            <li><input name="answer1" type="button" class="button"> style </li>
+            <li><input name="answer2" type="button" class="button"> div </li>
+            <li><input name="answer3" type="button" class="button"> java </li>
+            <li><input name="answer4" type="button" class="button"> script </li>
+        </ul>
+        correct: 4
+        </form>
+
+        <form id="question-2" class="quesiton">
+        <h3>How do we turn a string into number?</h3>
+        <ul>
+            <li><input name="answer1" type="button" class="button">isNaN()</li>
+            <li><input name="answer2" type="button" class="button">toLocaleString()</li>
+            <li><input name="answer3" type="button" class="button">parseInt()</li>
+            <li><input name="answer4" type="button" class="button">valueOf()</li>
+        </ul>
+        correct: 3
+        </form>
+
+        <form id="question-3" class="quesiton">
+        <h3>How do we create a p tag in JavaScript</h3>
+        <ul>
+            <li><input name="answer1" type="button" class="button">document.createElement('p')</li>
+            <li><input name="answer2" type="button" class="button">document.setAttribute('p')</li>
+            <li><input name="answer3" type="button" class="button">document.getElementById('p')</li>
+            <li><input name="answer4" type="button" class="button">document.querySelector('p')</li>
+        </ul>
+        correct: 1
+        </form>
+
+        <form id="question-4" class="quesiton">
+            <h3>What does event.stopPropogation() do?</h3>
+            <ul>
+            <li><input name="answer1" type="button" class="button">Stops the current math function from running</li>
+            <li><input name="answer2" type="button" class="button">Stops a timer from running past 0</li>
+            <li><input name="answer3" type="button" class="button">Stops an event from continuing to happen in a parent or child element</li>
+            <li><input name="answer4" type="button" class="button">Ends the current event that is running</li>
+          </ul>
+        correct: 3
+        </form> 
+
+        <form id="question-1" class="quesiton">
+           <h3>What is document.querySelector() used for?</h3>
+            <ul>
+                <li><input name="answer1" type="button"class="button">Returns the element with the class name specified</li>
+                <li><input name="answer2" type="button"class="button">Returns the first element that matches the CSS selector</li>
+                <li><input name="answer3" type="button"class="button">Returns the element with the tag name specified</li>
+                <li><input name="answer4" type="button" class="button">Returns the element with ID name specified</li>
+            </ul>
+           correct: 2
+        </form>
     </div>
-    
-    <div id="beginBtn">
-    <button id="startButton">Start</button>
-    </div>
 
-    </div>
+</div>
 
-    <script src="../script.js"></script>
-    <script src="../script/questions.js"></script>
 
+<script src="./script.js"></script>
+<script src="./script/questions.js"></script>
 
 </body>
 </html>
