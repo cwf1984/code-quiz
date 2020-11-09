@@ -1,9 +1,12 @@
+  
 //on load, Welcome-Page appears
 //question-container is not visible
 
 window.onload = function() {
-    qtnContainter.setAttribute("class", "hide");
-  }
+  qtnContainter.setAttribute("class", "hide");
+}
+
+
 // WHEN click start button, timer starts and decrements by 1 seconds
 
 var timerCount = document.getElementById("timer");
@@ -13,11 +16,6 @@ var qtnContainter = document.getElementById("question-container");
 var welcomePg = document.getElementById("Welcome-Page");
 var answerButton = document.querySelector(".answer-button");
 var score = 150;
-var qtnText = document.getElementById("#questionText")
-var btn1 = document.getElementById("#button1");
-var btn2 = document.getElementById("#button2");
-var btn3 = document.getElementById("#button3");
-var btn4 = document.getElementById("#button4");
 
 var questions = [
     {question: "Seredipity",
@@ -111,31 +109,87 @@ function timeRemaining(event) {
 // WHEN click start button
 
 function questionStart(event) {
-    if (welcomePg.style.display==="none") {
-        questionContainer.style.display = "block";
-    }
-}; 
+    // if (welcomePg.style.display==="none") {
+    //     questionContainer.style.display = "block";
+    // }
+
+    // function startGame(event) {
+    
+      welcomePg.setAttribute("class", "hide");
+      startButton.setAttribute("class", "hide");
+      };
 
     questions.forEach(function(qtnAnswer) {
-        console.log(questions.question)
-        console.log(questions.answers[0])
-        document.querySelector("#questionText").textContent = questions.question;
-        document.querySelector("#button1").textContent = questions.answers[0];
-        document.querySelector("#button2").textContent = questions.answers[1];
-        document.querySelector("#button3").textContent = questions.answers[2];
-        document.querySelector("#button4").textContent = questions.answers[3];
+
+      var wordText = document.createElement("div");
+      wordText.innerHTML = questions.question;
+      document.getElementById("question-container").append(wordText);
+
+      var btn1 = document.createElement("button");
+      btn1.innerHTML = questions.answers;
+      document.getElementById("question-container").append(btn1);
+
+      var btn2 = document.createElement("button");
+      btn2.innerHTML = questions.answers;
+      document.getElementById("question-container").append(btn2);
+
+      var btn3 = document.createElement("button");
+      btn3.innerHTML = questions.answers;
+      document.getElementById("question-container").append(btn3);
+
+      var btn4 = document.createElement("button");
+      btn4.innerHTML = questions.answers;
+      document.getElementById("question-container").append(btn4);
+
+        console.log(qtnAnswer);
+       
         
     });
 
-    qtnAnswer();
 
 
-    function startGame (event) {
-    
-    welcomePg.setAttribute("class", "hide");
-    startButton.setAttribute("class", "hide");
-    qtnContainter.setAttribute("class", "visible");
-    }
+ 
+    // for (var i = 0; i < questions.length; i++) {
+    //     qtnText.innerHTML=questions[i].question;
+    //     btn1.innerHTML=questions[i].answers[0];
+    //     btn2.innerHTML=questions[i].answers[1];
+    //     btn3.innerHTML=questions[i].answers[2];
+    //     btn4.innerHTML=questions[i].answers[3];
+    // }
+
+        // if ( answers === correct) {
+            //alert displays "correct"
+        // }
+
+        // else {
+            //alert displays "wrong"
+            //decrease score by 10
+        // }
+
+      // Loop over every question object
+      // for (var i = 0; i < questions.length; i++) {
+        // Display current question to user and ask OK/Cancel
+        // var answer = confirm(questions[i].q);
+
+        // Compare answers
+        // if (
+        //   (answer === true && questions[i].a === "t") ||
+        //   (answer === false && questions[i].a === "f")
+        // ) {
+          // Increase score
+      //     score++;
+      //     alert("Correct!");
+      //   } else {
+      //     alert("Wrong!");
+      //   }
+      // }
+
+   
+
+
+
+
+   
 
 
         // if (
