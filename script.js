@@ -11,10 +11,15 @@ var startButton = document.getElementById("startButton");
 var secondsLeft = 150;
 var qtnContainter = document.getElementById("question-container");
 var welcomePg = document.getElementById("Welcome-Page");
-var answerButton = document.getElementsByClassName("answerbtn");
+var answerButton = document.querySelector(".answer-button");
 var score = 150;
+var qtnText = document.getElementById("#questionText")
+var btn1 = document.getElementById("#button1");
+var btn2 = document.getElementById("#button2");
+var btn3 = document.getElementById("#button3");
+var btn4 = document.getElementById("#button4");
 
-questions = [
+var questions = [
     {question: "Seredipity",
      answers: ["The positive occurence and development of events by change",
                "Existing or being everywhere at the same time", 
@@ -86,54 +91,63 @@ questions = [
      correct: 2}
 ]
 
+startButton.addEventListener("click", questionStart);
+startButton.addEventListener("click", timeRemaining);
 
 // Countdown Timer starts of click of Start Button
 
-function timeRemaining() {
+function timeRemaining(event) {
     var timerInterval = setInterval (function() {
         timerCount.innerHTML = secondsLeft;
         secondsLeft--;
 
         if(secondsLeft === 0) {
-            clearInterval(timerInterval = 0)
+            clearInterval(timerInterval = 0);
         }
     }, 1000);
-}
+};
 
-
-
-startButton.addEventListener("click", timeRemaining);
-startButton.addEventListener("click", startGame);
 
 // WHEN click start button
 
-function questionStart( ) {
-    if (welcomePage.style.display==="none") {
+function questionStart(event) {
+    if (welcomePg.style.display==="none") {
         questionContainer.style.display = "block";
     }
-    else {
-        questionContainer.style.display = "none";
-    }};
+}; 
 
-function startGame () {
+    questions.forEach(function(qtnAnswer) {
+        console.log(questions.question)
+        console.log(questions.answers[0])
+        document.querySelector("#questionText").textContent = questions.question;
+        document.querySelector("#button1").textContent = questions.answers[0];
+        document.querySelector("#button2").textContent = questions.answers[1];
+        document.querySelector("#button3").textContent = questions.answers[2];
+        document.querySelector("#button4").textContent = questions.answers[3];
+        
+    });
+
+    qtnAnswer();
+
+
+    function startGame (event) {
+    
     welcomePg.setAttribute("class", "hide");
     startButton.setAttribute("class", "hide");
     qtnContainter.setAttribute("class", "visible");
+    }
 
-    for (var i = 0; i < questions.length; i++) {
-        
-        if (
-            (questions[i].answers === false)
-        ) {
-            score--;
+
+        // if (
+        //     (questions[i].answers === false)
+        // ) {
+        //     score--;
                
-        }
-        else {
+        // }
+        // else {
             
-        }
-}};
-
-    
+        // }
+   
 
 
 
