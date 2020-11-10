@@ -3,16 +3,16 @@
 
 var secondsLeft = 150;
 var score = 150;
-var currentQtnIndex = 0;
+var timerCount = document.getElementById("timer");
 var welcomePg = document.getElementById("Welcome-Page");
 var startButton = document.getElementById("startButton");
+var currentQtnIndex = 0;
 var questionContainter = document.getElementById("questionContainer");
 var qtnEl = document.getElementById("questionText");
 var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
-var timerCount = document.getElementById("timer");
 
 var answerButton = document.querySelector(".answer-button");
 
@@ -118,15 +118,18 @@ function questionStart(event) {
       questionsDisplay();
   };
 
-  function questionsDisplay(){
+function questionsDisplay(){
 
-    var currentQtn = questions[currentQtnIndex];
-    qtnEl.textContent = currentQtn.question;
-    btn1.textContent = currentQtn.answers[0];
-    btn1.textContent = currentQtn.answers[1];
-    btn1.textContent = currentQtn.answers[2];
-    btn1.textContent = currentQtn.answers[3];
-    console.log(currentQtn);
+  var currentQtn = questions[currentQtnIndex];
+
+  qtnEl.innerHTML = currentQtn.question;
+  btn1.innerHTML = currentQtn.answers[0];
+  btn2.innerHTML = currentQtn.answers[1];
+  btn3.innerHTML = currentQtn.answers[2];
+  btn4.innerHTML = currentQtn.answers[3];
+
+  console.log(currentQtn);
+
   };
 
 
