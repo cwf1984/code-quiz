@@ -1,22 +1,22 @@
-  
-//on load, Welcome-Page appears
-//question-container is not visible
 
-window.onload = function() {
-  qtnContainter.setAttribute("class", "hide");
-}
+// Global variables
 
-
-// WHEN click start button, timer starts and decrements by 1 seconds
-
-var timerCount = document.getElementById("timer");
-var startButton = document.getElementById("startButton");
 var secondsLeft = 150;
-var qtnContainter = document.getElementById("question-container");
-var welcomePg = document.getElementById("Welcome-Page");
-var answerButton = document.querySelector(".answer-button");
 var score = 150;
+var currentQtnIndex = 0;
+var welcomePg = document.getElementById("Welcome-Page");
+var startButton = document.getElementById("startButton");
+var questionContainter = document.getElementById("questionContainer");
+var qtnEl = document.getElementById("questionText");
+var btn1 = document.getElementById("btn1");
+var btn2 = document.getElementById("btn2");
+var btn3 = document.getElementById("btn3");
+var btn4 = document.getElementById("btn4");
+var timerCount = document.getElementById("timer");
 
+var answerButton = document.querySelector(".answer-button");
+
+//Array of Questions and Answers
 var questions = [
     {question: "Seredipity",
      answers: ["The positive occurence and development of events by change",
@@ -87,7 +87,7 @@ var questions = [
                "Burden", 
                "Scrupulous"],
      correct: 2}
-]
+];
 
 startButton.addEventListener("click", questionStart);
 startButton.addEventListener("click", timeRemaining);
@@ -109,52 +109,35 @@ function timeRemaining(event) {
 // WHEN click start button
 
 function questionStart(event) {
-    // if (welcomePg.style.display==="none") {
-    //     questionContainer.style.display = "block";
-    // }
 
-    // function startGame(event) {
-    
       welcomePg.setAttribute("class", "hide");
       startButton.setAttribute("class", "hide");
-      };
+      questionContainer.classList.remove("hide");
+      questionContainer.classList.add("display");
 
-    questions.forEach(function(qtnAnswer) {
+      questionsDisplay();
+  };
 
-      var wordText = document.createElement("div");
-      wordText.innerHTML = questions.question;
-      document.getElementById("question-container").append(wordText);
+  function questionsDisplay(){
 
-      var btn1 = document.createElement("button");
-      btn1.innerHTML = questions.answers;
-      document.getElementById("question-container").append(btn1);
-
-      var btn2 = document.createElement("button");
-      btn2.innerHTML = questions.answers;
-      document.getElementById("question-container").append(btn2);
-
-      var btn3 = document.createElement("button");
-      btn3.innerHTML = questions.answers;
-      document.getElementById("question-container").append(btn3);
-
-      var btn4 = document.createElement("button");
-      btn4.innerHTML = questions.answers;
-      document.getElementById("question-container").append(btn4);
-
-        console.log(qtnAnswer);
-       
-        
-    });
+    var currentQtn = questions[currentQtnIndex];
+    qtnEl.textContent = currentQtn.question;
+    btn1.textContent = currentQtn.answers[0];
+    btn1.textContent = currentQtn.answers[1];
+    btn1.textContent = currentQtn.answers[2];
+    btn1.textContent = currentQtn.answers[3];
+    console.log(currentQtn);
+  };
 
 
 
  
     // for (var i = 0; i < questions.length; i++) {
-    //     qtnText.innerHTML=questions[i].question;
-    //     btn1.innerHTML=questions[i].answers[0];
-    //     btn2.innerHTML=questions[i].answers[1];
-    //     btn3.innerHTML=questions[i].answers[2];
-    //     btn4.innerHTML=questions[i].answers[3];
+      //loop over just answers
+      //when answer, rerun answers
+      // qIndex = 0
+      //claer innerHTML of questionContainer
+
     // }
 
         // if ( answers === correct) {

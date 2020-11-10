@@ -39,6 +39,10 @@ nav {
     display: none;
 }
 
+.display {
+    display: block;
+}
+
 
 
 #question {
