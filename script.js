@@ -13,10 +13,10 @@ var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
-
 var answerButton = document.querySelector(".answer-button");
+var alert = document.getElementById("alert");
 
-//Array of Questions and Answers
+//Array of Questions and Answers with correct answer index #
 var questions = [
     {question: "Seredipity",
      answers: ["The positive occurence and development of events by change",
@@ -89,6 +89,9 @@ var questions = [
      correct: 2}
 ];
 
+
+//click Start Button to run questionStart function and timeRemaining function
+
 startButton.addEventListener("click", questionStart);
 startButton.addEventListener("click", timeRemaining);
 
@@ -106,7 +109,7 @@ function timeRemaining(event) {
 };
 
 
-// WHEN click start button
+// WHEN click start button, the opening page hides and question/answers to display
 
 function questionStart(event) {
 
@@ -120,6 +123,7 @@ function questionStart(event) {
 
 function questionsDisplay(){
 
+  //Creating variable to access index 
   var currentQtn = questions[currentQtnIndex];
 
   qtnEl.innerHTML = currentQtn.question;
@@ -130,32 +134,53 @@ function questionsDisplay(){
 
   console.log(currentQtn);
 
+  //onclick shoudl display the next question
+  // answerButton.onClick = questionChecker();
+  btn1.onclick = questionChecker();
+  btn2.onclick = questionChecker();
+  btn3.onclick = questionChecker();
+  btn4.onclick = questionChecker();
+
+  //console logs null
+  console.log(answerButton.onclick);
+
   };
 
 
+  
+  
 
- 
-    // for (var i = 0; i < questions.length; i++) {
-      //loop over just answers
-      //when answer, rerun answers
-      // qIndex = 0
-      //claer innerHTML of questionContainer
+  function questionChecker() {
 
-    // }
+    //for loop to run through the array
+    for (var i = 0; i < questions[currentQtnIndex].length; i++) {
 
-        // if ( answers === correct) {
-            //alert displays "correct"
-        // }
+      //clear the inner HTML of previous question and answers
+      qtnEL.innerHTML = "";
+      btn1.innerHTML = "";
+      btn2.innerHTML = "";
+      btn3.innerHTML = "";
+      btn4.innerHTML = "";
 
-        // else {
-            //alert displays "wrong"
-            //decrease score by 10
-        // }
+      //run the questionsDisplay function again to display new question and answer choices
+      questionsDisplay();
 
-      // Loop over every question object
-      // for (var i = 0; i < questions.length; i++) {
-        // Display current question to user and ask OK/Cancel
-        // var answer = confirm(questions[i].q);
+      //how user answers will determine what alert text is displayed
+      if (this.innerHTML !== questions[currentQtnIndex].correct) {
+        alert.innerHTML = "That is incorrect";
+        score -= 15;
+      }
+
+      else if (this.innerHTML === questions[currentQtnIndex].correct) {
+        alert.innerHTML = "That is correct";
+      }
+
+    };
+
+    //increase the index to the next question/answer in the array
+    currentQtnIndex++;
+
+  };
 
         // Compare answers
         // if (
@@ -169,24 +194,6 @@ function questionsDisplay(){
       //     alert("Wrong!");
       //   }
       // }
-
-   
-
-
-
-
-   
-
-
-        // if (
-        //     (questions[i].answers === false)
-        // ) {
-        //     score--;
-               
-        // }
-        // else {
-            
-        // }
    
 
 

@@ -128,29 +128,29 @@ questions = [
 //         answerChoice4.textContent = questions[3].answers[3];
 //         };
 
-   // questions.forEach(function(qtnAnswer) {
+//    questions.forEach(function(qtnAnswer) {
 
-    //   var wordText = document.createElement("div");
-    //   wordText.innerHTML = questions.question;
-    //   document.getElementById("question-container").append(wordText);
+//       var wordText = document.createElement("div");
+//       wordText.innerHTML = questions.question;
+//       document.getElementById("question-container").append(wordText);
 
-    //   var btn1 = document.createElement("button");
-    //   btn1.innerHTML = questions.answers;
-    //   document.getElementById("question-container").append(btn1);
+//       var btn1 = document.createElement("button");
+//       btn1.innerHTML = questions.answers;
+//       document.getElementById("question-container").append(btn1);
 
-    //   var btn2 = document.createElement("button");
-    //   btn2.innerHTML = questions.answers;
-    //   document.getElementById("question-container").append(btn2);
+//       var btn2 = document.createElement("button");
+//       btn2.innerHTML = questions.answers;
+//       document.getElementById("question-container").append(btn2);
 
-    //   var btn3 = document.createElement("button");
-    //   btn3.innerHTML = questions.answers;
-    //   document.getElementById("question-container").append(btn3);
+//       var btn3 = document.createElement("button");
+//       btn3.innerHTML = questions.answers;
+//       document.getElementById("question-container").append(btn3);
 
-    //   var btn4 = document.createElement("button");
-    //   btn4.innerHTML = questions.answers;
-    //   document.getElementById("question-container").append(btn4);
+//       var btn4 = document.createElement("button");
+//       btn4.innerHTML = questions.answers;
+//       document.getElementById("question-container").append(btn4);
 
-    //     console.log(qtnAnswer);
+//         console.log(qtnAnswer);
        
         
-    // });
+//     });
