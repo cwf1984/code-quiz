@@ -137,18 +137,15 @@ function questionsDisplay(){
 
   //onclick shoudl display the next question
   // answerButton.onClick = questionChecker();
-  btn1.onclick = questionChecker();
-  btn2.onclick = questionChecker();
-  btn3.onclick = questionChecker();
-  btn4.onclick = questionChecker();
+  btn1.addEventListener("click", questionChecker);
+  btn2.addEventListener("click", questionChecker);
+  btn3.addEventListener("click", questionChecker);
+  btn4.addEventListener("click", questionChecker);
 
-  //console logs null
-  console.log(answerButton.onclick);
+  //console logs correct information but clicking button goes nowhere
+  console.log(btn1);
 
   };
-
-
-  
   
 
   function questionChecker() {
