@@ -126,6 +126,7 @@ function questionsDisplay(){
   //Creating variable to access index 
   var currentQtn = questions[currentQtnIndex];
 
+  //setting text in buttons and answer div
   qtnEl.innerHTML = currentQtn.question;
   btn1.innerHTML = currentQtn.answers[0];
   btn2.innerHTML = currentQtn.answers[1];
