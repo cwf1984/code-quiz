@@ -2,7 +2,8 @@
 // Global variables
 
 var secondsLeft = 150;
-var score = 150;
+var score = 0;
+//answer correctly, increment score by 1
 var timerCount = document.getElementById("timer");
 var welcomePg = document.getElementById("Welcome-Page");
 var startButton = document.getElementById("startButton");
@@ -96,16 +97,26 @@ startButton.addEventListener("click", questionStart);
 startButton.addEventListener("click", timeRemaining);
 
 // Countdown Timer starts of click of Start Button
+var timerInterval;
+
+function timeOver() {
+  if(secondsLeft <= 0) {
+    clearInterval(timerInterval);
+    timer.innerHTML = 0;
+    var gameOver = document.getElementById("gameOver");
+    gameOver.innerHTML = "Game Over";
+    setScore();
+}
+};
+
 
 function timeRemaining(event) {
-    var timerInterval = setInterval (function() {
+    timerInterval = setInterval (function() {
         timerCount.innerHTML = secondsLeft;
         secondsLeft--;
-
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval = 0);
-        }
+        timeOver();
     }, 1000);
+   
 };
 
 
@@ -135,63 +146,79 @@ function questionsDisplay(){
 
   console.log(currentQtn);
 
-  //onclick shoudl display the next question
-  // answerButton.onClick = questionChecker();
-  btn1.addEventListener("click", questionChecker);
-  btn2.addEventListener("click", questionChecker);
-  btn3.addEventListener("click", questionChecker);
-  btn4.addEventListener("click", questionChecker);
-
-  //console logs correct information but clicking button goes nowhere
-  console.log(btn1);
+  alert.innerHTML = "";
 
   };
   
+  questionContainer.addEventListener("click", questionChecker);
 
-  function questionChecker() {
+  function questionChecker( event ) {
 
-    //for loop to run through the array
-    for (var i = 0; i < questions[currentQtnIndex].length; i++) {
+    //reference to the specific clicked button
+    // console.log( event.target );
 
-      //clear the inner HTML of previous question and answers
-      qtnEL.innerHTML = "";
-      btn1.innerHTML = "";
-      btn2.innerHTML = "";
-      btn3.innerHTML = "";
-      btn4.innerHTML = "";
+    /**
+     * Get piece of data from the button to compare
+     * to the "correct" answer. 
+     * 
+     * 
+     */
 
-      //run the questionsDisplay function again to display new question and answer choices
-      questionsDisplay();
+    //  console.log( event.target.dataset.index);
+    //  console.log(this);
+
+
+     //complete this line to fetch data from the button
+     var choice = parseInt(event.target.getAttribute("data-index")); 
+     console.log(event.target.getAttribute("data-index"));
+
 
       //how user answers will determine what alert text is displayed
-      if (this.innerHTML !== questions[currentQtnIndex].correct) {
+      //need to compare to the correct "choice"
+      
+      if (choice !== questions[currentQtnIndex].correct) {
         alert.innerHTML = "That is incorrect";
-        score -= 15;
+        secondsLeft -= 15;
       }
 
-      else if (this.innerHTML === questions[currentQtnIndex].correct) {
+      else if (choice === questions[currentQtnIndex].correct) {
         alert.innerHTML = "That is correct";
+        score++;
       }
 
-    };
 
     //increase the index to the next question/answer in the array
     currentQtnIndex++;
 
+    /**
+     * Add code to check if reached end of questions
+     * if so, call end of game instead of questionsDisplay()
+     */
+
+
+     if (currentQtnIndex === questions.length) {
+       var gameOver = document.getElementById("gameOver");
+       gameOver.innerHTML = "Game Over";
+       //hide question container - display none
+       setScore();
+
+     }
+
+    //run the questionsDisplay function again to display new question and answer choices
+    //delay - no parenthesis for delay to happen
+    setTimeout(questionsDisplay, 500);
+
   };
 
-        // Compare answers
-        // if (
-        //   (answer === true && questions[i].a === "t") ||
-        //   (answer === false && questions[i].a === "f")
-        // ) {
-          // Increase score
-      //     score++;
-      //     alert("Correct!");
-      //   } else {
-      //     alert("Wrong!");
-      //   }
-      // }
+  function setScore(){
+    localStorage.setItem("score", score);
+    //grab initials and use JSON for localStorage
+    //when gameover check local storage to check object for high scores
+    //if not store in local storage
+  }
+  //
+
+
    
 
 

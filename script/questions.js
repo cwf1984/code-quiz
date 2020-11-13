@@ -154,3 +154,14 @@ questions = [
        
         
 //     });
+
+    //for loop to run through the array
+    // for (var i = 0; i < questions[currentQtnIndex].length; i++) {
+
+        //clear the inner HTML of previous question and answers
+        // qtnEL.innerHTML = "";
+        // btn1.innerHTML = "";
+        // btn2.innerHTML = "";
+        // btn3.innerHTML = "";
+        // btn4.innerHTML = "";
+  
