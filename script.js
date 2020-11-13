@@ -16,6 +16,8 @@ var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
 var answerButton = document.querySelector(".answer-button");
 var alert = document.getElementById("alert");
+var userForm = document.getElementById("userForm");
+var submitButton = document.getElementById("submitButton");
 
 //Array of Questions and Answers with correct answer index #
 var questions = [
@@ -65,7 +67,7 @@ var questions = [
      answers: ["Entertained",
                "Puzzled", 
                "Enlightened", 
-               "Confused"],
+               "Skeptical"],
      correct: 1},
 
      {question: "Dichotomy",
@@ -154,33 +156,26 @@ function questionsDisplay(){
 
   function questionChecker( event ) {
 
-    //reference to the specific clicked button
-    // console.log( event.target );
-
-    /**
-     * Get piece of data from the button to compare
-     * to the "correct" answer. 
-     * 
-     * 
-     */
-
-    //  console.log( event.target.dataset.index);
-    //  console.log(this);
-
-
-     //complete this line to fetch data from the button
-     var choice = parseInt(event.target.getAttribute("data-index")); 
+     //variable which retrieves the data-index values from the HTML
+     //use parseInt to change it into a number
+     var choice = parseInt(event.target.getAttribute("data-index"));
+     
+     
      console.log(event.target.getAttribute("data-index"));
 
 
       //how user answers will determine what alert text is displayed
       //need to compare to the correct "choice"
       
+      //if user answers incorrectly, message is displayed below buttons
+      //15 seconds is subtracted from the time
       if (choice !== questions[currentQtnIndex].correct) {
         alert.innerHTML = "That is incorrect";
         secondsLeft -= 15;
       }
 
+      //if user answers correctly, alert displays correct
+      //score increases by 1
       else if (choice === questions[currentQtnIndex].correct) {
         alert.innerHTML = "That is correct";
         score++;
@@ -196,25 +191,33 @@ function questionsDisplay(){
      */
 
 
+     //when the index variable reaches the length of the # of questions
+     //They are alerted with Game Over
+     //Question Container element hides
+     //setScore function is called to store user score in local storage
      if (currentQtnIndex === questions.length) {
        var gameOver = document.getElementById("gameOver");
        gameOver.innerHTML = "Game Over";
-       //hide question container - display none
-       setScore();
+       questionContainer.setAttribute("class", "hide");
+       userForm.classList.remove("hide");
 
+       setScore();
      }
 
     //run the questionsDisplay function again to display new question and answer choices
-    //delay - no parenthesis for delay to happen
+    //questionsDisplay does not use parenthesis which allows the delay
+    //before the next question appears
     setTimeout(questionsDisplay, 500);
 
   };
 
+  submitButton.addEventListener("click", setScore);
+
   function setScore(){
     localStorage.setItem("score", score);
     //grab initials and use JSON for localStorage
-    //when gameover check local storage to check object for high scores
-    //if not store in local storage
+    var userInitials = JSON.parse(localStorage.getItem("initials", userInitials));
+    localStorage.setItem("initials", JSON.stringify(userInitials));
   }
   //
 
