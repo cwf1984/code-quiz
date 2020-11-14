@@ -28,10 +28,13 @@ Or use the URL listed below to view the live webpage.
 
 ## Images
 
-Below is an image of the issues I was having trying to incorporate a textbox onto the images:
+Below is an image of the first issue I am experiencing - when the user answers, the alert as to whether it is correct or incorrect does not display in the question container, it is instead displayed where the user is alerted the game is over and to enter name:
 
-![Text Box Trouble](./images/TextBoxTrouble.png "Text Box Trouble")
+![Final Question Alert Issue](./images/Issue1.png "Final Question Alert Issue")
 
+Below is an image of the second issue I am experiencing - when the user enters their score, just the number is displayed, Your Score: disappears.
+
+![Your Score: display Issue](./images/Issue2.png "Your Score: display Issue")
 
 ## Credits
 
