@@ -18,6 +18,7 @@ var answerButton = document.querySelector(".answerButton");
 var alert = document.getElementById("alert");
 var userForm = document.getElementById("userForm");
 var submitButton = document.getElementById("submitButton");
+var userScore = document.getElementById("userScore");
 
 //Array of Questions and Answers with correct answer index #
 var questions = [
@@ -102,12 +103,13 @@ startButton.addEventListener("click", timeRemaining);
 var timerInterval;
 
 function timeOver() {
-  if(secondsLeft <= 0) {
+  if(secondsLeft <= 0 || currentQtnIndex === questions.length) {
     clearInterval(timerInterval);
     timer.innerHTML = 0;
     var gameOver = document.getElementById("gameOver");
     gameOver.innerHTML = "Game Over";
     setScore();
+
 }
 };
 
@@ -208,15 +210,16 @@ function questionsDisplay(){
 
   submitButton.addEventListener("click", setScore);
 
-  function setScore(){
-    gameOver.setAttribute("class", "hide");
+  function setScore(event){
+    event.preventDefault();
     alert.setAttribute("class", "hide");
     localStorage.setItem("score", score);
-    //grab initials and use JSON for localStorage
-    var userName = JSON.parse(localStorage.getItem("name", userName));
-    localStorage.setItem("name", JSON.stringify(userInitials));
+    var userName = JSON.parse(localStorage.getItem("userName", userName));
+    localStorage.setItem("name", JSON.stringify(userName));
+    document.getElementById("userScore").innerHTML = score;
+
   }
-  //
+  
 
 
    

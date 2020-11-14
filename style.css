@@ -69,7 +69,7 @@ nav {
     align-items: center;
 }
 
-#alert {
+#alert, #gameOver {
     font-size: 22pt;
     color: rgb(250, 239, 219);
     text-align: center;
@@ -85,6 +85,7 @@ nav {
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: 12pt;
+    
 }
 
 .answerButton {
@@ -107,7 +108,7 @@ button:hover {
     box-shadow: 2px 2px rgb(71, 71, 71);
 }
 
-#Welcome-Page, #userForm, input {
+#Welcome-Page, #userForm {
     padding: 10px;
     margin: 10px;
     flex: 0;
@@ -117,7 +118,17 @@ button:hover {
     text-align: center;
 }
 
-#beginBtn, #submitButton {
+input {
+    padding: 10px;
+    margin: 10px;
+    flex: 0;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15pt;
+    text-align: center;
+}
+
+#beginBtn {
     display: flex;
     justify-content: center;
     align-items: center;
