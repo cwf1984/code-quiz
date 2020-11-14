@@ -14,7 +14,7 @@ var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
-var answerButton = document.querySelector(".answer-button");
+var answerButton = document.querySelector(".answerButton");
 var alert = document.getElementById("alert");
 var userForm = document.getElementById("userForm");
 var submitButton = document.getElementById("submitButton");
@@ -185,11 +185,6 @@ function questionsDisplay(){
     //increase the index to the next question/answer in the array
     currentQtnIndex++;
 
-    /**
-     * Add code to check if reached end of questions
-     * if so, call end of game instead of questionsDisplay()
-     */
-
 
      //when the index variable reaches the length of the # of questions
      //They are alerted with Game Over
@@ -205,19 +200,21 @@ function questionsDisplay(){
      }
 
     //run the questionsDisplay function again to display new question and answer choices
-    //questionsDisplay does not use parenthesis which allows the delay
+    //questionsDisplay does not use parenthesis which allows the 2 second delay
     //before the next question appears
-    setTimeout(questionsDisplay, 500);
+    setTimeout(questionsDisplay, 2000);
 
   };
 
   submitButton.addEventListener("click", setScore);
 
   function setScore(){
+    gameOver.setAttribute("class", "hide");
+    alert.setAttribute("class", "hide");
     localStorage.setItem("score", score);
     //grab initials and use JSON for localStorage
-    var userInitials = JSON.parse(localStorage.getItem("initials", userInitials));
-    localStorage.setItem("initials", JSON.stringify(userInitials));
+    var userName = JSON.parse(localStorage.getItem("name", userName));
+    localStorage.setItem("name", JSON.stringify(userInitials));
   }
   //
 

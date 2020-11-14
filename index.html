@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,27 +25,29 @@
         </div>
 
         <div id="beginBtn">
-        <button id="startButton">Start</button>
+            <button id="startButton">Start</button>
         </div> 
         </section> 
         
         <div id="questionContainer" class="hide">
             <div id="questionText"></div>
-            <button id="btn1" class="answer-button" data-index="0"></button>
-            <button id="btn2" class="answer-button" data-index="1"></button>
-            <button id="btn3" class="answer-button" data-index="2"></button>
-            <button id="btn4" class="answer-button" data-index="3"></button>
+            <button id="btn1" class="answerButton" data-index="0"></button>
+            <button id="btn2" class="answerButton" data-index="1"></button>
+            <button id="btn3" class="answerButton" data-index="2"></button>
+            <button id="btn4" class="answerButton" data-index="3"></button>
 
         </div>
+
+        <br>
         
         <div id="alert"></div>
 
         <div id="gameOver"></div>
 
         <form id="userForm" class="hide">
-            <label for="initials">Your initials:</label><br>
-            <input type="text"><br>
-            <input id="submitButton" type="submit" value="Submit">
+            <label for="userName">Your Name:</label><br>
+            <input type="text" text-align="center"><br>
+            <button id="submitButton">Submit</button>
         </form>
 
     </div>

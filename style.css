@@ -33,6 +33,13 @@ nav {
 #question-container {
     padding: 10px;
     margin: 10px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20pt;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .hide {
@@ -43,53 +50,74 @@ nav {
     display: block;
 }
 
-
-
-#question {
-    flex: 0;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20pt;
-    text-align: center;
-    
-}
-
-.answer-button {
+#questionText, input {
     display: flex;
-    width: 100%;
+    justify-content: center;
+    align-content: center;
+    width: 90%;
     flex-direction: column;
     padding: 15px 0 15px 0;
     margin: 15px 0 15px 0;
 }
 
+#questionText {
+    padding: 15px;
+    margin: 5px 0 10px 10px;
+    color: rgb(250, 239, 219);
+    font-size: 32pt;
+    font-family: "Dancing Script", cursive;
+    align-items: center;
+}
 
-#startButton, .answerbtn {
+#alert {
+    font-size: 22pt;
+    color: rgb(250, 239, 219);
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+
+#startButton, #submitButton {
     padding: 15px;
     margin: 5px 0 10px 10px;
     color: black;
     background-color:white;
     border-radius: 8px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12pt;
 }
 
-.button:hover {
-    background-color: rgb(243, 210, 21);
-    color: white;
+.answerButton {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 15px 5% 15px 5%;
+    padding: 10px;
+    color: black;
+    background-color:white;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+}
+
+button:hover {
+    background-color: rgb(243, 177, 177);
+    color: rgb(7, 7, 7);
     box-shadow: 2px 2px rgb(71, 71, 71);
 }
 
-#Welcome-Page {
+#Welcome-Page, #userForm, input {
     padding: 10px;
     margin: 10px;
     flex: 0;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(226, 220, 220);
+    font-family: 'Open Sans', sans-serif;
     font-size: 15pt;
     text-align: center;
 }
 
-#beginBtn {
+#beginBtn, #submitButton {
     display: flex;
     justify-content: center;
     align-items: center;
